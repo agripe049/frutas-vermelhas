@@ -1,0 +1,40 @@
+/* app/layout.module.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+  }
+  
+  .header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  .nav {
+    margin-top: 10px;
+  }
+  
+  .nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+  
+  .nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .main {
+    flex: 1;
+    padding: 20px;
+  }
+  

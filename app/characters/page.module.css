@@ -1,0 +1,56 @@
+/* app/characters/page.module.css */
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .characterList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .characterItem {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+  }
+  
+  .characterItem:hover {
+    background-color: #e9ecef;
+  }
+  
+  .buttonContainer {
+    margin-top: 20px;
+  }
+  
+  .button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .button:not(:disabled):hover {
+    background-color: #0056b3;
+  }
+  
