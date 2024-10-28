@@ -1,11 +1,11 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 import styles from './page.module.css'; // Importa os estilos
 
-export default function CharacterList() {
+function CharacterListContent() {
   const [characters, setCharacters] = useState([]);
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -53,5 +53,13 @@ export default function CharacterList() {
         </button>
       </div>
     </div>
+  );
+}
+
+export default function CharacterList() {
+  return (
+    <Suspense fallback={<p>Carregando...</p>}>
+      <CharacterListContent />
+    </Suspense>
   );
 }
