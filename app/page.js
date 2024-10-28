@@ -12,11 +12,7 @@ export default function Home() {
       <Link href="/characters">
         <button className={styles.button}>Ver Personagens</button>
       </Link>
-      <img 
-        src="https://upload.wikimedia.org/wikipedia/en/4/4f/Rick_and_Morty_logo.png" 
-        alt="Rick and Morty Logo" 
-        className={styles.image}
-      />
+      
     </div>
   );
 }

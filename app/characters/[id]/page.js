@@ -3,15 +3,30 @@
 import { useEffect, useState } from 'react';
 
 export default function CharacterDetail({ params }) {
-  const { id } = params;
   const [character, setCharacter] = useState(null);
+  const [id, setId] = useState('');
 
   useEffect(() => {
-    async function fetchCharacter() {
-      const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
-      const data = await res.json();
-      setCharacter(data);
+    async function unwrapParams() {
+      const resolvedParams = await params;
+      setId(resolvedParams.id ?? '');
     }
+    unwrapParams();
+  }, [params]);
+
+  useEffect(() => {
+    if (!id) return;
+    
+    async function fetchCharacter() {
+      try {
+        const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+        const data = await res.json();
+        setCharacter(data);
+      } catch (error) {
+        console.error('Error fetching character:', error);
+      }
+    }
+
     fetchCharacter();
   }, [id]);
 
@@ -30,3 +45,4 @@ export default function CharacterDetail({ params }) {
     </div>
   );
 }
+
